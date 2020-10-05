@@ -1,0 +1,5 @@
+{
+  "name": "Custom Bravia TV",
+	"render_readme": true,
+	"domain": ["media_player"]
+}
