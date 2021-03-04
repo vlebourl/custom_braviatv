@@ -4,5 +4,6 @@
   "documentation": "https://www.home-assistant.io/integrations/braviatv",
   "requirements": ["bravia-tv==1.0.6"],
   "codeowners": ["@bieniu"],
-  "config_flow": true
+  "config_flow": true,
+  "version": "0.0"
 }
