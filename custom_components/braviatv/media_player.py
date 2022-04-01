@@ -210,9 +210,12 @@ class BraviaTVDevice(MediaPlayerEntity):
             self._source_list = []
             if not self._content_mapping:
                 return False
-            for key in self._content_mapping:
-                if key not in self._ignored_sources:
-                    self._source_list.append(key)
+            self._source_list.extend(
+                key
+                for key in self._content_mapping
+                if key not in self._ignored_sources
+            )
+
         return True
 
     async def _async_refresh_playing_info(self):
@@ -269,9 +272,7 @@ class BraviaTVDevice(MediaPlayerEntity):
     @property
     def volume_level(self):
         """Volume level of the media player (0..1)."""
-        if self._volume is not None:
-            return self._volume / 100
-        return None
+        return self._volume / 100 if self._volume is not None else None
 
     @property
     def is_volume_muted(self):
